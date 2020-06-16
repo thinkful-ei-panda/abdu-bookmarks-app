@@ -1,6 +1,6 @@
 Abdus's Bookmark App
 Application to collect and handle your favorite bookmarks.
-Link: https://andreacardybailey.github.io/Bookmarks_App/
+Link: https://thinkful-ei-panda.github.io/abdu-bookmarks-app/
 User stories:
 I can add bookmarks to my bookmark list. Bookmarks contain:
 title url link description rating (1-5).
