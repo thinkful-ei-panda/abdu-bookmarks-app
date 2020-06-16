@@ -1,0 +1,33 @@
+  body {
+    text-align: center;
+    background-color: rgb(175, 40, 210);
+  }
+  
+  
+  .mh {
+    padding: 29px 0;
+    background-color: rgba(105, 25, 0, 0.80);
+    font-size: 22px;
+    color: rgb(255, 220, 80); 
+    text-align: center;
+  }
+  
+  main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 230, 220);
+    width: 100%;  
+    border-color: rgb(175, 40, 210);
+    border-style: solid;
+   }
+
+   .bookmarks {
+     background-color: yellow;
+   }
+  
+   li {
+     background-color: violet;
+     border-radius: 45px;
+     margin: 10px;
+   }
