@@ -31,3 +31,12 @@
      border-radius: 45px;
      margin: 10px;
    }
+
+  @media all and (min-width: 600px) {
+     .mh {
+       font-size: 44px;
+     }
+     main {
+       font-size: 32px;
+     }
+   }
