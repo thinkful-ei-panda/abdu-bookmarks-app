@@ -87,7 +87,7 @@ function generateAddString() {
                 <label for="newBookLink">New Bookmark URL Link</label>
                 <input id="newBookLink" type="text" name="newBookLink" placeholder="http://www.newsite.com"><br>
                 <label for="newBookNick">New Bookmark Title</label>
-                <input id="newBookNick" type="text" name="newBookNick" placeholder="Nickname"><br>
+                <input id="newBookNick" type="text" name="newBookNick" placeholder="Title"><br>
                 <label for="newBookDesc">New Bookmark Description</label>
                 <input id='newBookDesc' type="text" name="newBookDesc" placeholder="Description"><br>
                 <select id="newFilter" name="addFilter">
