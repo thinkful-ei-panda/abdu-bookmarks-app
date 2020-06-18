@@ -4,7 +4,7 @@ function main() {
   console.log('main');
   bookmarks.initialize();
   bookmarks.bindEventListeners();
-  /*bookmarks.render('main');*/
+  bookmarks.render();
 }
 
 $(main);
