@@ -41,16 +41,24 @@ function formBookmarkListItems() {
                          <p>Visit Site: <a href=${bookmark.url}>${bookmark.url}</a></p>
                          <p>Rating: ${generateStar(bookmark.rating)}</p>
                          <p>${bookmark.desc}</p>
+                         <div class="expandorcollapseBookmark">
+                         <label for="buttonCollapse">Collapse Bookmark: </label>
+                           <button class="buttonCol" name="buttonCollapse" type="button">Collapse</button>
+                         </div>
                          <div class="deleteBookmark">
                            <label for="buttonDelete">Delete Bookmark: </label>
                            <button class="buttonDel" name="buttonDelete" type="button">Delete</button>
-                       </div>                    
-                     </li>`;
+                         </div>                    
+                       </li>`;
       }
       else {
         itemString += `<li class="jsBookmarkElement" data-bookmark-id="${bookmark.id}">
                          <span class="stars">${generateStar(bookmark.rating)}</span>
-                         ${bookmark.title}
+                         <p>${bookmark.title}</p>
+                         <div class="expandorcollapseBookmark">
+                         <label for="buttonExpand">Expand Bookmark: </label>
+                           <button class="buttonExp" name="buttonExpand" type="button">Expand</button>
+                         </div>
                        </li>`;
       }
     }
@@ -66,15 +74,16 @@ function generateMainString() {
             <div class="filterBy">
               <select id="js-filter" name="filter">
                 <option value="" selected="selected">Rating Filter</option>            
-                <option value="1">${generateStar(1)}</option>
-                <option value="2">${generateStar(2)}</option>
-                <option value="3">${generateStar(3)}</option>
-                <option value="4">${generateStar(4)}</option>
-                <option value="5">${generateStar(5)}</option>                                                
+                <option aria-label="1 star" value="1">${generateStar(1)}</option>
+                <option aria-label="2 star" value="2">${generateStar(2)}</option>
+                <option aria-label="3 star" value="3">${generateStar(3)}</option>
+                <option aria-label="4 star" value="4">${generateStar(4)}</option>
+                <option aria-label="5 star" value="5">${generateStar(5)}</option>                                                
               </select>
             </div>
           </section>
           <section class="bookmarks">
+            ${renderError()}
             <ul class="ulBookmarks">
               ${formBookmarkListItems()}
             </ul>
@@ -131,7 +140,7 @@ function bindEventListeners() {
 function handleErrorButtonClear() {
   $('main').on('click', '#cancelError', function () {
     store.clearError();      
-    render('add');
+    render('main');
   });
    
 }
@@ -155,7 +164,7 @@ function handleDeleteBookmark() {
       })
       .catch((err) => {
         store.setError(err.message);
-        render('add');        
+        render('main');        
       });
   });
 }
@@ -167,7 +176,7 @@ function getTitleIdFromElement(bookmark) {
 }
 
 function handleExpandClick() {
-  $('main').on('click', 'li', function(event) {
+  $('main').on('click', '.expandorcollapseBookmark', function(event) {
     const id = getTitleIdFromElement(event.currentTarget);
     store.toggleExpanded(id);
     render('main');
