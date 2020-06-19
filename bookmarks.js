@@ -1,7 +1,7 @@
 import store from './store.js';
 import api from './api.js';
 
-function initialize() {
+function renderPage() {
   api.getBookmarks()
     .then((bookmarks) => {
       bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
@@ -220,7 +220,6 @@ function handleCancelAddBookmark() {
 }
 
 export default {
-  initialize,
-  render,
+  renderPage,
   bindEventListeners
 };
