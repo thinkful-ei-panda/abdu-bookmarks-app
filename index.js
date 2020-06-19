@@ -2,9 +2,8 @@ import bookmarks from './bookmarks.js';
 
 function main() {
   console.log('main');
-  bookmarks.initialize();
+  bookmarks.renderPage();
   bookmarks.bindEventListeners();
-  bookmarks.render();
 }
 
 $(main);
