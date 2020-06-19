@@ -101,11 +101,11 @@ function generateAddString() {
                 <input id='newBookDesc' type="text" name="newBookDesc" placeholder="Description"><br>
                 <select id="newFilter" name="addFilter">
                   <option value="" selected="selected">Rating</option>            
-                  <option value="1">${generateStar(1)}</option>
-                  <option value="2">${generateStar(2)}</option>
-                  <option value="3">${generateStar(3)}</option>
-                  <option value="4">${generateStar(4)}</option>
-                  <option value="5">${generateStar(5)}</option>                                                
+                  <option aria-label="1 star" value="1">${generateStar(1)}</option>
+                  <option aria-label="2 star" value="2">${generateStar(2)}</option>
+                  <option aria-label="3 star" value="3">${generateStar(3)}</option>
+                  <option aria-label="4 star" value="4">${generateStar(4)}</option>
+                  <option aria-label="5 star" value="5">${generateStar(5)}</option>                                                
                 </select>
                 <div class="subCancelDiv">
                   <button class="buttonAddSubmit" type="submit">Submit</button>
