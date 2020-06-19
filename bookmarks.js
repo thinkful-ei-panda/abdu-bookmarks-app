@@ -5,11 +5,13 @@ function renderPage() {
   api.getBookmarks()
     .then((bookmarks) => {
       bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
-      render('main');
+      render('main'); // this should not be here. it is not doing what you think it is. 
+    //given the render function you currently have, at what point does 'main' ever become 'add'?
     });    
 }
 
-function render(myScreen) {
+function render(myScreen) { // render should not be receiving anything here. 
+  // console log store here and investigate it's contents. How can render "see" store here?
   let htmlString;
   switch (myScreen) {
   case 'main':
